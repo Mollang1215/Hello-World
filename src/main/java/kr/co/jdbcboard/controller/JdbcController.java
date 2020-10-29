@@ -42,17 +42,17 @@ public class JdbcController {
 	}
 	
 	@RequestMapping("BoardWrite")
-	public String board_Write(BoardBean board)
+	public String board_Write()
 	{
-		System.out.println("TEST : "+board.getBoard_Num());
 		System.out.println("BoardWrite()");
 		
 		return "qna_board_write";
 	}
 	
 	@RequestMapping("BoardAddAction")
-	public String board_WriteAction(HttpServletRequest request, Model model)
+	public String board_WriteAction(HttpServletRequest request, Model model, BoardBean board)
 	{
+		System.out.println("TEST : "+board.getBoard_Name());
 		System.out.println("BoardAddAction()");
 		model.addAttribute("request", request);
 		

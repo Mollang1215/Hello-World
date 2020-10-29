@@ -17,9 +17,9 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>1.4</version>
+			<groupId>servlets.com</groupId>
+			<artifactId>cos</artifactId>
+			<version>05Nov2002</version>
 		</dependency>
 
 		<!-- Ojdbc -->
