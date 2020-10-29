@@ -1,0 +1,32 @@
+package kr.co.jdbcboard.command;
+
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartRequest;
+
+import kr.co.jdbcboard.Bean.BoardBean;
+import kr.co.jdbcboard.Dao.JdbcDAO;
+
+public class BoardWriteAction implements BCommand {
+
+	@Override
+	public void execute(Model model) {
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest) map.get("request");
+
+		JdbcDAO jdbcDAO = new JdbcDAO();
+		BoardBean boarddata = new BoardBean();
+
+		boarddata.setBoard_Name(request.getParameter("BOARD_NAME"));
+		boarddata.setBoard_Pass(request.getParameter("BOARD_PASS"));
+		boarddata.setBoard_Subject(request.getParameter("BOARD_SUBJECT"));
+		boarddata.setBoard_Content(request.getParameter("BOARD_CONTENT"));
+
+		jdbcDAO.Write(boarddata);
+
+	}
+
+}
