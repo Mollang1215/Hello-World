@@ -36,7 +36,7 @@ public class BoardWriteAction implements BCommand {
 			JdbcDAO jdbcDAO = new JdbcDAO();
 			BoardBean boarddata = new BoardBean();
 
-			boarddata.setBoard_Name(multi.getParameter("BOARD_NAME"));
+			boarddata.setBoard_Name(multi.getParameter("Board_Name"));
 			boarddata.setBoard_Pass(multi.getParameter("BOARD_PASS"));
 			boarddata.setBoard_Subject(multi.getParameter("BOARD_SUBJECT"));
 			boarddata.setBoard_Content(multi.getParameter("BOARD_CONTENT"));
